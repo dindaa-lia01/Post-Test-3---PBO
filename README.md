@@ -36,3 +36,72 @@ Dengan penerapan ketiga konsep ini, program menjadi lebih aman, rapi, dan fleksi
 
    Pada bagian ini terdapat method tampilkanObat() yang bertugas untuk menampilkan informasi detail dari objek obat yang dibuat. Data yang ditampilkan mencakup nama obat, kategori, tanggal kedaluwarsa, stok, dan harga. Setiap informasi dicetak ke layar dengan System.out.println(). Method ini berguna agar data objek bisa dilihat dengan mudah oleh pengguna dalam format yang rapi.
    
+## B. Penjelasan Inheritance & Overiding
+
+1. Subclass ObatBebas
+
+   - Konstruktor dan Atribut
+
+     Class ObatBebas merupakan turunan dari Obat yang mewakili jenis obat yang bisa dibeli tanpa resep dokter. Class ini memiliki dua atribut tambahan, yaitu anjuranLabel untuk menyimpan petunjuk pemakaian obat yang biasanya tertera pada kemasan, serta golongan untuk menunjukkan kategori obat bebas (misalnya bebas, bebas terbatas, atau keras). Konstruktor ObatBebas menerima data umum obat lalu meneruskannya ke superclass dengan super(...), dan sekaligus menginisialisasi atribut tambahan khusus obat bebas.
+     
+    <img width="928" height="326" alt="Screenshot 2025-09-21 032314" src="https://github.com/user-attachments/assets/738aebed-895e-48e3-9def-a606ddc9ffa6" />
+ 
+   - Getter dan Setter
+
+     Method getter dan setter yang digunakan sebagai penerapan encapsulation. Method getAnjuranLabel() dan setAnjuranLabel() digunakan untuk mengambil dan mengubah aturan pemakaian obat yang tertera pada label, sedangkan getGolongan() dan setGolongan() digunakan untuk membaca serta mengubah kategori atau golongan obat. Dengan cara ini, data tetap terjaga karena atribut bersifat private dan hanya bisa diakses melalui method resmi.
+
+     <img width="800" height="166" alt="Screenshot 2025-09-21 032616" src="https://github.com/user-attachments/assets/ec98bbf3-6d44-4a20-a23a-adb172e83724" />
+     
+   - Overriding Method
+
+     Gambar ketiga memperlihatkan overriding method tampilkanObat(). Method ini pertama-tama memanggil super.tampilkanObat() untuk menampilkan informasi umum obat dari superclass, lalu menambahkan informasi khusus obat bebas, yaitu golongan obat dan anjuran pemakaian yang tertera pada label. Dengan overriding ini, tampilan data obat bebas menjadi lebih lengkap dan sesuai dengan kebutuhan nyata dalam manajemen obat di apotek.
+
+     <img width="498" height="183" alt="Screenshot 2025-09-21 032638" src="https://github.com/user-attachments/assets/00ff565e-66b9-42ff-a437-a26e353afbc1" />
+   
+3. Subclass ObatResep
+
+   - Atribut dan Konstruktor
+
+     Pada gambar ini, class ObatResep diturunkan dari class Obat menggunakan extends. Class ini menambahkan dua atribut baru, yaitu anjuranDokter untuk menyimpan aturan pemakaian obat sesuai instruksi dokter, serta nomorResep untuk menyimpan kode resep sebagai identitas resmi obat tersebut. Konstruktor ObatResep menerima data umum obat seperti nama, kategori, tanggal kadaluarsa, stok, dan harga, lalu meneruskannya ke superclass dengan super(...). Setelah itu, atribut khusus obat resep diinisialisasi agar data obat lebih lengkap.
+     
+   <img width="910" height="313" alt="image" src="https://github.com/user-attachments/assets/84280f02-d158-47da-99b4-c588f8fd4573" />
+
+   - Getter dan Setter
+
+     Gambar ini menunjukkan penerapan encapsulation. Atribut anjuranDokter dan nomorResep bersifat private, sehingga tidak bisa diakses langsung dari luar class. Untuk itu, dibuat method getter (getAnjuranDokter(), getNomorResep()) untuk mengambil data, dan setter (setAnjuranDokter(), setNomorResep()) untuk mengubah data. Dengan cara ini, keamanan dan keteraturan data lebih terjaga karena hanya bisa diakses melalui method yang sudah disediakan.
+
+     <img width="829" height="187" alt="image" src="https://github.com/user-attachments/assets/4665640a-f6ac-410c-8837-e5bd07ca6a9b" />
+
+   - Overriding Method
+  
+     Pada gambar ini terdapat method tampilkanObat() yang dioverride dari superclass Obat. Pertama, method ini memanggil super.tampilkanObat() untuk menampilkan informasi umum obat, lalu menambahkan dua informasi tambahan yaitu nomor resep dan anjuran dokter. Dengan overriding ini, saat objek ObatResep ditampilkan, hasil output akan lebih lengkap dan sesuai dengan karakteristik obat resep.
+
+     <img width="518" height="194" alt="image" src="https://github.com/user-attachments/assets/95aa1299-4ec3-44f3-80f7-4846c4b19338" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
