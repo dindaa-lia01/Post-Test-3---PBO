@@ -125,10 +125,29 @@ Setelah data dilengkapi, objek obat baru dibuat sesuai jenisnya lalu dimasukkan 
 
 
 1. Tampilkan Obat
-2. Tambah Obat
-3. Update Obat
-   
 
+   Program menampilkan semua obat yang ada di daftarObat, baik Obat Bebas maupun Obat Resep. Setiap obat ditampilkan dengan detail atributnya seperti nama, kategori, tanggal kedaluwarsa, stok, harga, serta atribut tambahan (misalnya golongan dan anjuran pada obat bebas, atau nomor resep dan anjuran dokter pada obat resep).
+   
+   <img width="487" height="705" alt="image" src="https://github.com/user-attachments/assets/0d780a62-d72d-44f8-a314-5631da10043d" />
+
+   <img width="397" height="217" alt="image" src="https://github.com/user-attachments/assets/ab93de21-bed0-4a8e-8a5c-48a263ee7b2b" />
+   
+3. Tambah Obat
+
+   Saat user memilih menu 2 (Tambah Obat) lalu memilih jenis Obat Bebas. User diminta mengisi data obat baru, termasuk nama, kategori, expired date, stok, harga, anjuran, dan golongan. Jika data valid, objek ObatBebas baru dibuat menggunakan constructor dan ditambahkan ke daftarObat. Pesan “Obat berhasil ditambahkan!” muncul sebagai konfirmasi.
+   
+   <img width="583" height="422" alt="image" src="https://github.com/user-attachments/assets/fd8fe64b-4a9d-4b97-baa0-dffe08e0337e" />
+
+   <img width="460" height="221" alt="image" src="https://github.com/user-attachments/assets/8ff1ad4a-b919-4c8e-b7c9-c388aab92b94" />
+
+
+5. Update Obat
+
+   Saat user memilih menu 3 (Update Obat) lalu memilih obat nomor 4. Program menampilkan data lama obat (Vitamin C), lalu meminta input baru untuk tiap atribut. User dapat mengosongkan input jika tidak ingin mengubah nilai lama. Setelah update, obat tersebut diperbarui di dalam list dan ditampilkan pesan “Obat berhasil diupdate!”.
+   
+   <img width="975" height="189" alt="image" src="https://github.com/user-attachments/assets/68e265d8-0e7b-4f49-b4e0-de41fab5e550" />
+
+   <img width="664" height="218" alt="image" src="https://github.com/user-attachments/assets/38024667-5203-4f38-a537-b9b392c8c291" />
 
 
 
