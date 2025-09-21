@@ -54,13 +54,13 @@ Penerapan inheritance ini dilakukan pada package models dengan menjadikan class 
 
     Method getter dan setter yang digunakan sebagai penerapan encapsulation. Method getAnjuranLabel() dan setAnjuranLabel() digunakan untuk mengambil dan mengubah aturan pemakaian obat yang tertera pada label, sedangkan getGolongan() dan setGolongan() digunakan untuk membaca serta mengubah kategori atau golongan obat. Dengan cara ini, data tetap terjaga karena atribut bersifat private dan hanya bisa diakses melalui method resmi.
 
-   <img width="800" height="166" alt="Screenshot 2025-09-21 032616" src="https://github.com/user-attachments/assets/ec98bbf3-6d44-4a20-a23a-adb172e83724" />
+    <img width="800" height="166" alt="Screenshot 2025-09-21 032616" src="https://github.com/user-attachments/assets/ec98bbf3-6d44-4a20-a23a-adb172e83724" />
      
   - Overriding Method
 
     Method tampilkanObat() dioverride di dalam class ObatBebas. Tujuannya agar saat data obat bebas ditampilkan, program tidak hanya menampilkan informasi umum dari superclass Obat, tetapi juga menambahkan informasi khusus untuk obat bebas. Di awal, dicetak label [Obat Bebas], lalu dipanggil super.tampilkanObat() untuk menampilkan atribut umum seperti nama, kategori, tanggal kedaluwarsa, stok, dan harga. Setelah itu, ditambahkan dua baris tambahan untuk menampilkan golongan obat dan anjuran penggunaan yang memang menjadi ciri khas obat bebas.
 
-   <img width="501" height="230" alt="Screenshot 2025-09-21 144109" src="https://github.com/user-attachments/assets/e39092d9-f121-4d1e-b8a4-56d7805f0107" />
+    <img width="501" height="230" alt="Screenshot 2025-09-21 144109" src="https://github.com/user-attachments/assets/e39092d9-f121-4d1e-b8a4-56d7805f0107" />
    
 ### 2. Subclass ObatResep
 
