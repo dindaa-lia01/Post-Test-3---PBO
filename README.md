@@ -12,11 +12,11 @@ Dengan penerapan ketiga konsep ini, program menjadi lebih aman, rapi, dan fleksi
 
 Penerapan encapsulation ini diterapkan pada package models, yakni pada class obat.
 
- - Package Main (class apotek)
+ - Package dan Import
      
    Kode ini menunjukkan bahwa kelas Obat berada dalam package bernama models, yang biasanya digunakan untuk menyimpan struktur data atau entitas. Selain itu, terdapat import java.time.LocalDate; yang digunakan untuk mengimpor class LocalDate dari library Java. LocalDate dipakai untuk menyimpan informasi tanggal kedaluwarsa obat, sehingga lebih akurat dibandingkan hanya menggunakan String.
 
-   <img width="269" height="63" alt="image" src="https://github.com/user-attachments/assets/75a4b801-4ee7-41f9-89bd-0e9f99091421" />
+   <img width="895" height="438" alt="image" src="https://github.com/user-attachments/assets/0d93ec87-6292-4064-aee7-bf8450cd4a56" />
 
   - Deklarasi Kelas dan Konstruktor
 
@@ -58,13 +58,13 @@ Penerapan inheritance ini dilakukan pada package models dengan menjadikan class 
      
    - Overriding Method
 
-     Gambar ketiga memperlihatkan overriding method tampilkanObat(). Method ini pertama-tama memanggil super.tampilkanObat() untuk menampilkan informasi umum obat dari superclass, lalu menambahkan informasi khusus obat bebas, yaitu golongan obat dan anjuran pemakaian yang tertera pada label. Dengan overriding ini, tampilan data obat bebas menjadi lebih lengkap dan sesuai dengan kebutuhan nyata dalam manajemen obat di apotek.
+     Method tampilkanObat() dioverride di dalam class ObatBebas. Tujuannya agar saat data obat bebas ditampilkan, program tidak hanya menampilkan informasi umum dari superclass Obat, tetapi juga menambahkan informasi khusus untuk obat bebas. Di awal, dicetak label [Obat Bebas], lalu dipanggil super.tampilkanObat() untuk menampilkan atribut umum seperti nama, kategori, tanggal kedaluwarsa, stok, dan harga. Setelah itu, ditambahkan dua baris tambahan untuk menampilkan golongan obat dan anjuran penggunaan yang memang menjadi ciri khas obat bebas.
 
-     <img width="498" height="183" alt="Screenshot 2025-09-21 032638" src="https://github.com/user-attachments/assets/00ff565e-66b9-42ff-a437-a26e353afbc1" />
+     <img width="501" height="230" alt="Screenshot 2025-09-21 144109" src="https://github.com/user-attachments/assets/e39092d9-f121-4d1e-b8a4-56d7805f0107" />
    
 2. Subclass ObatResep
 
-  - Atribut dan Konstruktor
+  - Konstruktor dan Atribut
  
     Pada gambar ini, class ObatResep diturunkan dari class Obat menggunakan extends. Class ini menambahkan dua atribut baru, yaitu anjuranDokter untuk menyimpan aturan pemakaian obat sesuai instruksi dokter, serta nomorResep untuk menyimpan kode resep sebagai identitas resmi obat tersebut. Konstruktor ObatResep menerima data umum obat seperti nama, kategori, tanggal kadaluarsa, stok, dan harga, lalu meneruskannya ke superclass dengan super(...). Setelah itu, atribut khusus obat resep diinisialisasi agar data obat lebih lengkap.
      
@@ -78,9 +78,9 @@ Penerapan inheritance ini dilakukan pada package models dengan menjadikan class 
 
   - Overriding Method
 
-    Pada gambar ini terdapat method tampilkanObat() yang dioverride dari superclass Obat. Pertama, method ini memanggil super.tampilkanObat() untuk menampilkan informasi umum obat, lalu menambahkan dua informasi tambahan yaitu nomor resep dan anjuran dokter. Dengan overriding ini, saat objek ObatResep ditampilkan, hasil output akan lebih lengkap dan sesuai dengan karakteristik obat resep.
+    Method tampilkanObat() juga dioverride, tetapi di dalam class ObatResep. Sama seperti sebelumnya, program pertama menampilkan label [Obat Resep], kemudian memanggil super.tampilkanObat() untuk menampilkan atribut umum dari obat. Selanjutnya, ditambahkan informasi tambahan yang hanya dimiliki oleh obat resep, yaitu nomor resep sebagai identitas resmi pembelian, dan anjuran dokter sebagai aturan penggunaan sesuai instruksi tenaga medis. Dengan cara ini, data obat resep menjadi lebih jelas dan berbeda dari obat bebas.
 
-    <img width="518" height="194" alt="image" src="https://github.com/user-attachments/assets/95aa1299-4ec3-44f3-80f7-4846c4b19338" />
+    <img width="512" height="224" alt="Screenshot 2025-09-21 144133" src="https://github.com/user-attachments/assets/9cdf1add-3e51-4774-ab83-1e70621919cd" />
 
 3. Pembaruan pada package service
 
