@@ -16,13 +16,13 @@ Penerapan encapsulation ini diterapkan pada package models, yakni pada class oba
      
    Kode ini menunjukkan bahwa kelas Obat berada dalam package bernama models, yang biasanya digunakan untuk menyimpan struktur data atau entitas. Selain itu, terdapat import java.time.LocalDate; yang digunakan untuk mengimpor class LocalDate dari library Java. LocalDate dipakai untuk menyimpan informasi tanggal kedaluwarsa obat, sehingga lebih akurat dibandingkan hanya menggunakan String.
 
-   <img width="895" height="438" alt="image" src="https://github.com/user-attachments/assets/0d93ec87-6292-4064-aee7-bf8450cd4a56" />
+   <img width="271" height="62" alt="image" src="https://github.com/user-attachments/assets/aa949e34-6297-4e5c-8ff4-18a67e0a9ad6" />
 
   - Deklarasi Kelas dan Konstruktor
 
-    Kode ini mendefinisikan sebuah kelas bernama Obat yang berada dalam konsep Object-Oriented Programming (OOP). Di dalamnya terdapat atribut privat yaitu namaObat, kategori, expiredDate, stok, dan harga. Atribut-atribut ini diset sebagai private agar hanya bisa diakses melalui method khusus (getter dan setter), sehingga mendukung prinsip enkapsulasi. Pada bagian konstruktor public Obat(...), terdapat parameter untuk mengisi data awal dari atribut kelas. Keyword this digunakan untuk membedakan antara variabel lokal dengan atribut kelas, contohnya this.namaObat = namaObat;.
+    Kode ini mendefinisikan sebuah kelas bernama Obat yang berada dalam konsep Object-Oriented Programming (OOP). Di dalamnya terdapat atribut privat yaitu namaObat, kategori, expiredDate, stok, dan harga. Atribut-atribut ini diset sebagai private agar hanya bisa diakses melalui method khusus (getter dan setter), sehingga mendukung prinsip enkapsulasi. Pada bagian konstruktor public Obat(...), terdapat parameter untuk mengisi data awal dari atribut kelas. Keyword this digunakan untuk membedakan antara variabel lokal dengan atribut kelas, contohnya this.namaObat = namaObat;. Pada class obat ini akan dijadikan sebagai superclass, dimana nantinya akan menjadi kelas induk yang mewariskan  property dan method pada subclass
 
-    <img width="882" height="440" alt="image" src="https://github.com/user-attachments/assets/9cd6930d-9aed-45e8-841d-33f6faff98a3" />
+      <img width="895" height="438" alt="image" src="https://github.com/user-attachments/assets/0d93ec87-6292-4064-aee7-bf8450cd4a56" />
 
   - Getter dan Setter
 
@@ -86,6 +86,47 @@ Penerapan inheritance ini dilakukan pada package models dengan menjadikan class 
 
    Pembaruan pada package service ini dilakukan karena adanya penambahan inheritance pada package models sebelumnya.
 
+   - Konstruktor
+
+     Pada bagian ini, konstruktor obatService() langsung menambahkan beberapa data obat contoh ke dalam daftarObat. Data tersebut menggunakan subclass ObatBebas dan ObatResep. Tujuannya agar saat program pertama dijalankan, sudah ada data obat yang bisa ditampilkan tanpa harus menambahkannya secara manual dulu. Ini juga menunjukkan implementasi inheritance, karena objek dari subclass bisa dimasukkan ke ArrayList yang bertipe Obat (superclass).
+
+     <img width="962" height="385" alt="Screenshot 2025-09-21 145900" src="https://github.com/user-attachments/assets/aa13aec0-054f-46f9-961d-47e50a59963d" />
+
+     - Method tambahObat()
+       
+       Method ini digunakan untuk menambah obat baru. Program menampilkan pilihan jenis obat (bebas atau resep), kemudian meminta input dari pengguna untuk mengisi data dasar seperti nama obat, kategori, tanggal kedaluwarsa, stok, dan harga. Input ini berlaku untuk semua jenis obat, karena bagian ini masih mencakup atribut dari superclass Obat.
+
+       <img width="737" height="782" alt="Screenshot 2025-09-21 150121" src="https://github.com/user-attachments/assets/bd970dde-c128-4925-8f4c-e22976c8d109" />
+
+     Bagian ini memisahkan logika berdasarkan pilihan jenis obat:
+
+     - Jika Obat Bebas, pengguna diminta mengisi anjuran label dan golongan obat. Namun, jika golongan obat diisi "KERAS", program akan menolak dengan pesan bahwa obat keras tidak bisa dibeli tanpa resep dokter.
+
+     - Jika Obat Resep, pengguna diminta memasukkan nomor resep dan anjuran dokter.
+Setelah data dilengkapi, objek obat baru dibuat sesuai jenisnya lalu dimasukkan ke dalam daftarObat.
+
+       <img width="847" height="794" alt="Screenshot 2025-09-21 150315" src="https://github.com/user-attachments/assets/d902439a-2e59-4754-a137-089f2adcd4bd" />
+
+     - Method updateObat()
+
+       Method ini digunakan untuk memperbarui data obat yang sudah ada. Pertama, daftar obat ditampilkan lalu pengguna memilih nomor obat yang ingin diupdate. Setelah itu, program memberikan kesempatan untuk mengganti atribut umum seperti nama, kategori, stok, dan harga. Jika input dibiarkan kosong, maka data lama tetap dipakai.
+       
+      <img width="664" height="695" alt="Screenshot 2025-09-21 150357" src="https://github.com/user-attachments/assets/43dbddc0-603d-42c6-b27b-e030109e4166" />
+
+     Bagian ini menggunakan instanceof untuk mengecek apakah obat yang dipilih merupakan ObatBebas atau ObatResep.
+
+     - Jika ObatBebas, pengguna bisa memperbarui anjuran label dan golongan obat.
+
+     - Jika ObatResep, pengguna bisa memperbarui nomor resep dan anjuran dokter. Dengan begitu, setiap jenis obat punya data spesifik yang bisa dikelola sesuai kebutuhannya.
+
+       <img width="612" height="766" alt="Screenshot 2025-09-21 150413" src="https://github.com/user-attachments/assets/162d2c83-6c15-4245-9f25-749ebab17643" />
+       
+# B. Penjelasan Alur Output
+
+
+1. Tampilkan Obat
+2. Tambah Obat
+3. Update Obat
    
 
 
