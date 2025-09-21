@@ -42,33 +42,33 @@ Penerapan encapsulation ini diterapkan pada package models, yakni pada class oba
 
 Penerapan inheritance ini dilakukan pada package models dengan menjadikan class obat menjadi superclass, lalu menambahkan 2 subclass yakni ObatBebas dan ObatResep.
 
-1. Subclass ObatBebas
+### 1. Subclass ObatBebas
 
-   - Konstruktor dan Atribut
+  - Konstruktor dan Atribut
 
-     Class ObatBebas merupakan turunan dari Obat yang mewakili jenis obat yang bisa dibeli tanpa resep dokter. Class ini memiliki dua atribut tambahan, yaitu anjuranLabel untuk menyimpan petunjuk pemakaian obat yang biasanya tertera pada kemasan, serta golongan untuk menunjukkan kategori obat bebas (misalnya bebas, bebas terbatas, atau keras). Konstruktor ObatBebas menerima data umum obat lalu meneruskannya ke superclass dengan super(...), dan sekaligus menginisialisasi atribut tambahan khusus obat bebas.
-     
+    Class ObatBebas merupakan turunan dari Obat yang mewakili jenis obat yang bisa dibeli tanpa resep dokter. Class ini memiliki dua atribut tambahan, yaitu anjuranLabel untuk menyimpan petunjuk pemakaian obat yang biasanya tertera pada kemasan, serta golongan untuk menunjukkan kategori obat bebas (misalnya bebas, bebas terbatas, atau keras). Konstruktor ObatBebas menerima data umum obat lalu meneruskannya ke superclass dengan super(...), dan sekaligus menginisialisasi atribut tambahan khusus obat bebas.
+
     <img width="928" height="326" alt="Screenshot 2025-09-21 032314" src="https://github.com/user-attachments/assets/738aebed-895e-48e3-9def-a606ddc9ffa6" />
  
-   - Getter dan Setter
+  - Getter dan Setter
 
-     Method getter dan setter yang digunakan sebagai penerapan encapsulation. Method getAnjuranLabel() dan setAnjuranLabel() digunakan untuk mengambil dan mengubah aturan pemakaian obat yang tertera pada label, sedangkan getGolongan() dan setGolongan() digunakan untuk membaca serta mengubah kategori atau golongan obat. Dengan cara ini, data tetap terjaga karena atribut bersifat private dan hanya bisa diakses melalui method resmi.
+    Method getter dan setter yang digunakan sebagai penerapan encapsulation. Method getAnjuranLabel() dan setAnjuranLabel() digunakan untuk mengambil dan mengubah aturan pemakaian obat yang tertera pada label, sedangkan getGolongan() dan setGolongan() digunakan untuk membaca serta mengubah kategori atau golongan obat. Dengan cara ini, data tetap terjaga karena atribut bersifat private dan hanya bisa diakses melalui method resmi.
 
-     <img width="800" height="166" alt="Screenshot 2025-09-21 032616" src="https://github.com/user-attachments/assets/ec98bbf3-6d44-4a20-a23a-adb172e83724" />
+   <img width="800" height="166" alt="Screenshot 2025-09-21 032616" src="https://github.com/user-attachments/assets/ec98bbf3-6d44-4a20-a23a-adb172e83724" />
      
-   - Overriding Method
+  - Overriding Method
 
-     Method tampilkanObat() dioverride di dalam class ObatBebas. Tujuannya agar saat data obat bebas ditampilkan, program tidak hanya menampilkan informasi umum dari superclass Obat, tetapi juga menambahkan informasi khusus untuk obat bebas. Di awal, dicetak label [Obat Bebas], lalu dipanggil super.tampilkanObat() untuk menampilkan atribut umum seperti nama, kategori, tanggal kedaluwarsa, stok, dan harga. Setelah itu, ditambahkan dua baris tambahan untuk menampilkan golongan obat dan anjuran penggunaan yang memang menjadi ciri khas obat bebas.
+    Method tampilkanObat() dioverride di dalam class ObatBebas. Tujuannya agar saat data obat bebas ditampilkan, program tidak hanya menampilkan informasi umum dari superclass Obat, tetapi juga menambahkan informasi khusus untuk obat bebas. Di awal, dicetak label [Obat Bebas], lalu dipanggil super.tampilkanObat() untuk menampilkan atribut umum seperti nama, kategori, tanggal kedaluwarsa, stok, dan harga. Setelah itu, ditambahkan dua baris tambahan untuk menampilkan golongan obat dan anjuran penggunaan yang memang menjadi ciri khas obat bebas.
 
-     <img width="501" height="230" alt="Screenshot 2025-09-21 144109" src="https://github.com/user-attachments/assets/e39092d9-f121-4d1e-b8a4-56d7805f0107" />
+   <img width="501" height="230" alt="Screenshot 2025-09-21 144109" src="https://github.com/user-attachments/assets/e39092d9-f121-4d1e-b8a4-56d7805f0107" />
    
-2. Subclass ObatResep
+### 2. Subclass ObatResep
 
   - Konstruktor dan Atribut
  
     Pada gambar ini, class ObatResep diturunkan dari class Obat menggunakan extends. Class ini menambahkan dua atribut baru, yaitu anjuranDokter untuk menyimpan aturan pemakaian obat sesuai instruksi dokter, serta nomorResep untuk menyimpan kode resep sebagai identitas resmi obat tersebut. Konstruktor ObatResep menerima data umum obat seperti nama, kategori, tanggal kadaluarsa, stok, dan harga, lalu meneruskannya ke superclass dengan super(...). Setelah itu, atribut khusus obat resep diinisialisasi agar data obat lebih lengkap.
-     
-   <img width="910" height="313" alt="image" src="https://github.com/user-attachments/assets/84280f02-d158-47da-99b4-c588f8fd4573" />
+
+    <img width="910" height="313" alt="image" src="https://github.com/user-attachments/assets/84280f02-d158-47da-99b4-c588f8fd4573" />
 
   - Getter dan Setter
 
@@ -82,7 +82,7 @@ Penerapan inheritance ini dilakukan pada package models dengan menjadikan class 
 
     <img width="512" height="224" alt="Screenshot 2025-09-21 144133" src="https://github.com/user-attachments/assets/9cdf1add-3e51-4774-ab83-1e70621919cd" />
 
-3. Pembaruan pada package service
+### 3. Pembaruan pada package service
 
    Pembaruan pada package service ini dilakukan karena adanya penambahan inheritance pada package models sebelumnya.
 
@@ -92,11 +92,11 @@ Penerapan inheritance ini dilakukan pada package models dengan menjadikan class 
 
      <img width="962" height="385" alt="Screenshot 2025-09-21 145900" src="https://github.com/user-attachments/assets/aa13aec0-054f-46f9-961d-47e50a59963d" />
 
-     - Method tambahObat()
-       
-       Method ini digunakan untuk menambah obat baru. Program menampilkan pilihan jenis obat (bebas atau resep), kemudian meminta input dari pengguna untuk mengisi data dasar seperti nama obat, kategori, tanggal kedaluwarsa, stok, dan harga. Input ini berlaku untuk semua jenis obat, karena bagian ini masih mencakup atribut dari superclass Obat.
+   - Method tambahObat()
 
-       <img width="737" height="782" alt="Screenshot 2025-09-21 150121" src="https://github.com/user-attachments/assets/bd970dde-c128-4925-8f4c-e22976c8d109" />
+     Method ini digunakan untuk menambah obat baru. Program menampilkan pilihan jenis obat (bebas atau resep), kemudian meminta input dari pengguna untuk mengisi data dasar seperti nama obat, kategori, tanggal kedaluwarsa, stok, dan harga. Input ini berlaku untuk semua jenis obat, karena bagian ini masih mencakup atribut dari superclass Obat.
+
+     <img width="737" height="782" alt="Screenshot 2025-09-21 150121" src="https://github.com/user-attachments/assets/bd970dde-c128-4925-8f4c-e22976c8d109" />
 
      Bagian ini memisahkan logika berdasarkan pilihan jenis obat:
 
@@ -107,11 +107,11 @@ Setelah data dilengkapi, objek obat baru dibuat sesuai jenisnya lalu dimasukkan 
 
        <img width="847" height="794" alt="Screenshot 2025-09-21 150315" src="https://github.com/user-attachments/assets/d902439a-2e59-4754-a137-089f2adcd4bd" />
 
-     - Method updateObat()
+  - Method updateObat()
 
-       Method ini digunakan untuk memperbarui data obat yang sudah ada. Pertama, daftar obat ditampilkan lalu pengguna memilih nomor obat yang ingin diupdate. Setelah itu, program memberikan kesempatan untuk mengganti atribut umum seperti nama, kategori, stok, dan harga. Jika input dibiarkan kosong, maka data lama tetap dipakai.
-       
-      <img width="664" height="695" alt="Screenshot 2025-09-21 150357" src="https://github.com/user-attachments/assets/43dbddc0-603d-42c6-b27b-e030109e4166" />
+    Method ini digunakan untuk memperbarui data obat yang sudah ada. Pertama, daftar obat ditampilkan lalu pengguna memilih nomor obat yang ingin diupdate. Setelah itu, program memberikan kesempatan untuk mengganti atribut umum seperti nama, kategori, stok, dan harga. Jika input dibiarkan kosong, maka data lama tetap dipakai.
+
+    <img width="664" height="695" alt="Screenshot 2025-09-21 150357" src="https://github.com/user-attachments/assets/43dbddc0-603d-42c6-b27b-e030109e4166" />
 
      Bagian ini menggunakan instanceof untuk mengecek apakah obat yang dipilih merupakan ObatBebas atau ObatResep.
 
@@ -123,6 +123,7 @@ Setelah data dilengkapi, objek obat baru dibuat sesuai jenisnya lalu dimasukkan 
        
 # B. Penjelasan Alur Output
 
+Penjelasan alur output ini hanya pada kode yang dilakukan perubahan, yakni terdapat pada menu tampilkan obat, tambah obat, dan update.
 
 1. Tampilkan Obat
 
