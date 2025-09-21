@@ -10,6 +10,8 @@ Dengan penerapan ketiga konsep ini, program menjadi lebih aman, rapi, dan fleksi
 
 ## A. Penjelasan Encapsulation
 
+Penerapan encapsulation ini diterapkan pada package models, yakni pada class obat.
+
  - Package Main (class apotek)
      
    Kode ini menunjukkan bahwa kelas Obat berada dalam package bernama models, yang biasanya digunakan untuk menyimpan struktur data atau entitas. Selain itu, terdapat import java.time.LocalDate; yang digunakan untuk mengimpor class LocalDate dari library Java. LocalDate dipakai untuk menyimpan informasi tanggal kedaluwarsa obat, sehingga lebih akurat dibandingkan hanya menggunakan String.
@@ -38,6 +40,8 @@ Dengan penerapan ketiga konsep ini, program menjadi lebih aman, rapi, dan fleksi
    
 ## B. Penjelasan Inheritance & Overiding
 
+Penerapan inheritance ini dilakukan pada package models dengan menjadikan class obat menjadi superclass, lalu menambahkan 2 subclass yakni ObatBebas dan ObatResep.
+
 1. Subclass ObatBebas
 
    - Konstruktor dan Atribut
@@ -58,29 +62,31 @@ Dengan penerapan ketiga konsep ini, program menjadi lebih aman, rapi, dan fleksi
 
      <img width="498" height="183" alt="Screenshot 2025-09-21 032638" src="https://github.com/user-attachments/assets/00ff565e-66b9-42ff-a437-a26e353afbc1" />
    
-3. Subclass ObatResep
+2. Subclass ObatResep
 
-   - Atribut dan Konstruktor
-
-     Pada gambar ini, class ObatResep diturunkan dari class Obat menggunakan extends. Class ini menambahkan dua atribut baru, yaitu anjuranDokter untuk menyimpan aturan pemakaian obat sesuai instruksi dokter, serta nomorResep untuk menyimpan kode resep sebagai identitas resmi obat tersebut. Konstruktor ObatResep menerima data umum obat seperti nama, kategori, tanggal kadaluarsa, stok, dan harga, lalu meneruskannya ke superclass dengan super(...). Setelah itu, atribut khusus obat resep diinisialisasi agar data obat lebih lengkap.
+  - Atribut dan Konstruktor
+ 
+    Pada gambar ini, class ObatResep diturunkan dari class Obat menggunakan extends. Class ini menambahkan dua atribut baru, yaitu anjuranDokter untuk menyimpan aturan pemakaian obat sesuai instruksi dokter, serta nomorResep untuk menyimpan kode resep sebagai identitas resmi obat tersebut. Konstruktor ObatResep menerima data umum obat seperti nama, kategori, tanggal kadaluarsa, stok, dan harga, lalu meneruskannya ke superclass dengan super(...). Setelah itu, atribut khusus obat resep diinisialisasi agar data obat lebih lengkap.
      
    <img width="910" height="313" alt="image" src="https://github.com/user-attachments/assets/84280f02-d158-47da-99b4-c588f8fd4573" />
 
-   - Getter dan Setter
+  - Getter dan Setter
 
-     Gambar ini menunjukkan penerapan encapsulation. Atribut anjuranDokter dan nomorResep bersifat private, sehingga tidak bisa diakses langsung dari luar class. Untuk itu, dibuat method getter (getAnjuranDokter(), getNomorResep()) untuk mengambil data, dan setter (setAnjuranDokter(), setNomorResep()) untuk mengubah data. Dengan cara ini, keamanan dan keteraturan data lebih terjaga karena hanya bisa diakses melalui method yang sudah disediakan.
+    Gambar ini menunjukkan penerapan encapsulation. Atribut anjuranDokter dan nomorResep bersifat private, sehingga tidak bisa diakses langsung dari luar class. Untuk itu, dibuat method getter (getAnjuranDokter(), getNomorResep()) untuk mengambil data, dan setter (setAnjuranDokter(), setNomorResep()) untuk mengubah data. Dengan cara ini, keamanan dan keteraturan data lebih terjaga karena hanya bisa diakses melalui method yang sudah disediakan.
 
-     <img width="829" height="187" alt="image" src="https://github.com/user-attachments/assets/4665640a-f6ac-410c-8837-e5bd07ca6a9b" />
+    <img width="829" height="187" alt="image" src="https://github.com/user-attachments/assets/4665640a-f6ac-410c-8837-e5bd07ca6a9b" />
 
-   - Overriding Method
-  
-     Pada gambar ini terdapat method tampilkanObat() yang dioverride dari superclass Obat. Pertama, method ini memanggil super.tampilkanObat() untuk menampilkan informasi umum obat, lalu menambahkan dua informasi tambahan yaitu nomor resep dan anjuran dokter. Dengan overriding ini, saat objek ObatResep ditampilkan, hasil output akan lebih lengkap dan sesuai dengan karakteristik obat resep.
+  - Overriding Method
 
-     <img width="518" height="194" alt="image" src="https://github.com/user-attachments/assets/95aa1299-4ec3-44f3-80f7-4846c4b19338" />
+    Pada gambar ini terdapat method tampilkanObat() yang dioverride dari superclass Obat. Pertama, method ini memanggil super.tampilkanObat() untuk menampilkan informasi umum obat, lalu menambahkan dua informasi tambahan yaitu nomor resep dan anjuran dokter. Dengan overriding ini, saat objek ObatResep ditampilkan, hasil output akan lebih lengkap dan sesuai dengan karakteristik obat resep.
 
+    <img width="518" height="194" alt="image" src="https://github.com/user-attachments/assets/95aa1299-4ec3-44f3-80f7-4846c4b19338" />
 
+3. Pembaruan pada package service
 
+   Pembaruan pada package service ini dilakukan karena adanya penambahan inheritance pada package models sebelumnya.
 
+   
 
 
 
